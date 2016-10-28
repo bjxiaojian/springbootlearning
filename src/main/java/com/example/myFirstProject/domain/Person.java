@@ -1,14 +1,13 @@
 package com.example.myFirstProject.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonValue;
-
+import com.fasterxml.jackson.annotation.JsonRootName;
 import org.apache.commons.lang3.StringUtils;
+import java.util.Date;
 
 /**
  * Created by bjxiaojian on 2016/10/26.
  */
+@JsonRootName("Test")
 public class Person {
 //  @JsonInclude(JsonInclude.Include.NON_NULL)
   private String name;
@@ -16,6 +15,8 @@ public class Person {
   private int age;
 
   private SexEnum sex;
+
+  private Date birthDay;
 
   public enum SexEnum{
     MAN("M", "m"),
@@ -90,5 +91,13 @@ public class Person {
 
   public void setSex(SexEnum sex) {
     this.sex = sex;
+  }
+
+  public Date getBirthDay() {
+    return birthDay;
+  }
+
+  public void setBirthDay(Date birthDay) {
+    this.birthDay = birthDay;
   }
 }
