@@ -2,6 +2,8 @@ package com.example.myFirstProject.test;
 
 import com.alibaba.fastjson.JSONObject;
 import com.example.myFirstProject.domain.Person;
+import com.example.myFirstProject.enums.SexEnum;
+import com.example.myFirstProject.util.EnumUtil;
 import com.example.myFirstProject.util.JacksonUtil;
 
 import org.joda.time.DateTime;
@@ -11,8 +13,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import static com.example.myFirstProject.domain.Person.SexEnum;
-import static com.example.myFirstProject.domain.Person.SexEnum.MAN;
 
 
 /**
@@ -34,8 +34,11 @@ public class JacksonTest {
 //    System.out.println(JacksonUtil.encode(person1));
 //    System.out.println(JacksonUtil.encode(personList));
 
-    String str = "{\"age\":1,\"birthDay\":1477661674628,\"name\":\"xiaojian\",\"sex\":\"M\"}}";
-    System.out.println(JacksonUtil.decode(str, Person.class).getSex());
+//    String str = "{\"age\":1,\"birthDay\":1477661674628,\"name\":\"xiaojian\",\"sex\":\"M\"}}";
+//    System.out.println(JacksonUtil.decode(str, Person.class).getSex());
 
+    Person person = new Person();
+    person.setSex(EnumUtil.getEnumObject("m", SexEnum.class));
+    System.out.println(JacksonUtil.encode(person));
   }
 }
