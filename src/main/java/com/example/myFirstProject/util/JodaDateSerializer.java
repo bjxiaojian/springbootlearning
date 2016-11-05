@@ -16,7 +16,7 @@ import java.io.IOException;
  */
 public class JodaDateSerializer extends StdSerializer<DateTime> {
 
-//    private static final Logger logger = LoggerFactory.getLogger(JodaDateSerializer.class);
+    private static final Logger logger = LoggerFactory.getLogger(JodaDateSerializer.class);
 
     protected JodaDateSerializer(Class<DateTime> t) {
         super(t);
@@ -33,7 +33,7 @@ public class JodaDateSerializer extends StdSerializer<DateTime> {
                 jgen.writeString(str);
 
             } catch (Exception e) {
-//                logger.error("joda serialize error: ", e);
+                logger.error("joda serialize error: ", e);
                 jgen.writeString("unknown");
             }
 
