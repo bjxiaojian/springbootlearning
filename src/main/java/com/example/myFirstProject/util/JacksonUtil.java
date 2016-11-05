@@ -79,10 +79,10 @@ public class JacksonUtil {
 
 
 
-        objectMapper
-            .setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.NONE) // auto-detect all member fields
-            .setVisibility(PropertyAccessor.GETTER, JsonAutoDetect.Visibility.ANY) // but only public getters
-            .setVisibility(PropertyAccessor.IS_GETTER, JsonAutoDetect.Visibility.ANY); // and none of "is-setters"
+//        objectMapper
+//            .setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY) // auto-detect all member fields
+//            .setVisibility(PropertyAccessor.GETTER, JsonAutoDetect.Visibility.ANY) // but only public getters
+//            .setVisibility(PropertyAccessor.IS_GETTER, JsonAutoDetect.Visibility.ANY); // and none of "is-setters"
     }
 
     public static String encode(Object obj) {

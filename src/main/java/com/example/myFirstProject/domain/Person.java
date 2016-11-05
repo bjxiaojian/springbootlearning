@@ -1,5 +1,6 @@
 package com.example.myFirstProject.domain;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import org.apache.commons.lang3.StringUtils;
 import java.util.Date;
@@ -8,6 +9,7 @@ import java.util.Date;
  * Created by bjxiaojian on 2016/10/26.
  */
 @JsonRootName("Test")
+//@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Person {
 //  @JsonInclude(JsonInclude.Include.NON_NULL)
   private String name;
@@ -77,13 +79,13 @@ public class Person {
     this.name = name;
   }
 
-  public int getAge() {
-    return age;
-  }
-
-  public void setAge(int age) {
-    this.age = age;
-  }
+//  public int getAge() {
+//    return age;
+//  }
+//
+//  public void setAge(int age) {
+//    this.age = age;
+//  }
 
   public SexEnum getSex() {
     return sex;
