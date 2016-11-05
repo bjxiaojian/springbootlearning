@@ -1,6 +1,8 @@
 package com.example.myFirstProject.domain;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.example.myFirstProject.enums.SexEnum;
+import com.example.myFirstProject.service.EnumMessage;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import org.apache.commons.lang3.StringUtils;
 import java.util.Date;
@@ -20,49 +22,6 @@ public class Person {
 
   private Date birthDay;
 
-  public enum SexEnum{
-    MAN("M", "m"),
-    WOMAN("F", "f");
-
-    private String merchantCode;
-    private String nativeCode;
-
-    SexEnum(String merchantCode, String nativeCode) {
-      this.merchantCode = merchantCode;
-      this.nativeCode = nativeCode;
-    }
-
-    public String getMerchantCode() {
-      return merchantCode;
-    }
-
-    public void setMerchantCode(String merchantCode) {
-      this.merchantCode = merchantCode;
-    }
-
-    public String getNativeCode() {
-      return nativeCode;
-    }
-
-    public void setNativeCode(String nativeCode) {
-      this.nativeCode = nativeCode;
-    }
-
-    @Override
-    public String toString() {
-      return getMerchantCode();
-    }
-
-    public static SexEnum getSexEnumByNativeCode(String nativeCode){
-      for(SexEnum sexEnum : SexEnum.values()){
-        if(StringUtils.equals(nativeCode, sexEnum.getNativeCode())){
-          return sexEnum;
-        }
-      }
-      return null;
-    }
-  }
-
   public Person() {
   }
 
@@ -79,13 +38,13 @@ public class Person {
     this.name = name;
   }
 
-//  public int getAge() {
-//    return age;
-//  }
-//
-//  public void setAge(int age) {
-//    this.age = age;
-//  }
+  public int getAge() {
+    return age;
+  }
+
+  public void setAge(int age) {
+    this.age = age;
+  }
 
   public SexEnum getSex() {
     return sex;
