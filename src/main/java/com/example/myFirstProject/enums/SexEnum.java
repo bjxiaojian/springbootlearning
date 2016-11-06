@@ -1,45 +1,55 @@
 package com.example.myFirstProject.enums;
 
 import com.example.myFirstProject.service.EnumMessage;
-
 import org.apache.commons.lang3.StringUtils;
 
 public enum SexEnum implements EnumMessage {
-  MAN("M", "m"),
-  WOMAN("F", "f");
+  MAN("M", "男"),
+  WOMAN("F", "女");
 
-  private String merchantCode;
-  private String nativeCode;
+  private String code;
+  private String desc;
 
-  SexEnum(String merchantCode, String nativeCode) {
-    this.merchantCode = merchantCode;
-    this.nativeCode = nativeCode;
+  SexEnum(String code, String desc) {
+    this.code = code;
+    this.desc = desc;
   }
 
-  public String getMerchantCode() {
-    return merchantCode;
+  public String getCode() {
+    return code;
   }
 
-  public void setMerchantCode(String merchantCode) {
-    this.merchantCode = merchantCode;
+  public void setCode(String code) {
+    this.code = code;
   }
 
-  public String getNativeCode() {
-    return nativeCode;
+  public String getDesc() {
+    return desc;
   }
 
-  public void setNativeCode(String nativeCode) {
-    this.nativeCode = nativeCode;
+  public void setDesc(String desc) {
+    this.desc = desc;
   }
 
-  @Override
-  public String toString() {
-    return getMerchantCode();
-  }
+//  @Override
+//  public String toString() {
+//    return getDesc();
+//  }  @Override
+//  public String toString() {
+//    return getDesc();
+//  }
 
   @Override
   public Object getValue() {
-    return nativeCode;
+    return code;
   }
 
+  public static SexEnum getSexEnumByCode(String code){
+    for(SexEnum sexEnum : SexEnum.values()){
+      if(StringUtils.equals(code, sexEnum.getCode())){
+        return sexEnum;
+      }
+    }
+    return null;
+  }
 }

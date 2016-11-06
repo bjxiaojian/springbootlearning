@@ -38,7 +38,8 @@ public class JacksonTest {
 //    System.out.println(JacksonUtil.decode(str, Person.class).getSex());
 
     Person person = new Person();
-    person.setSex(EnumUtil.getEnumObject("m", SexEnum.class));
+    person.setSex(EnumUtil.getEnumObject("M", SexEnum.class));
+    System.out.println(EnumUtil.getEnumObject("M", SexEnum.class));
     System.out.println(JacksonUtil.encode(person));
   }
 }
