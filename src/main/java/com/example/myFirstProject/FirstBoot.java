@@ -24,6 +24,7 @@ public class FirstBoot {
 
     public static void main(String[] args) {
 
+        
         SpringApplication.run(FirstBoot.class, args);
     }
 }
