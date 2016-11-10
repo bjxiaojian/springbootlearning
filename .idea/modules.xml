@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/firstboot/firstboot.iml" filepath="$PROJECT_DIR$/firstboot/firstboot.iml" />
       <module fileurl="file://$PROJECT_DIR$/myboot.iml" filepath="$PROJECT_DIR$/myboot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/secondboot/secondboot.iml" filepath="$PROJECT_DIR$/secondboot/secondboot.iml" />
     </modules>
   </component>
 </project>
