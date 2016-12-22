@@ -94,6 +94,23 @@ public class UserController {
     userService.testTransaction(username, password);
   }
 
+  @ApiOperation("测试mybatis and or联查")
+  @ApiImplicitParams({
+      @ApiImplicitParam(paramType="query",name="id",dataType="int",required=false, value="用户的id",defaultValue="1"),
+      @ApiImplicitParam(paramType="query",name="username",dataType="String",required=false,value="用户的姓名",defaultValue="bjxiaojian"),
+      @ApiImplicitParam(paramType="query",name="password",dataType="String",required=false,value="用户的密码",defaultValue="123")
+  })
+  @ApiResponses({
+      @ApiResponse(code=400,message="请求参数没填好"),
+      @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
+  })
+  @RequestMapping(value="/testMybatisAndOrUnion",method=RequestMethod.GET)
+  public User getUserByIdAndUsernameOrPassword(@RequestParam(name="id",required=false) Integer id,
+                                               @RequestParam(name="username",required=false) String username,
+                                               @RequestParam(name="password",required=false) String password) {
+    return userService.getUserByIdAndUsernameOrPassword(id, username, password);
+  }
+
 //  @RequestMapping("/testJedisCluster")
 //  public User testJedisCluster(@RequestParam("username") String username) {
 //    String value = myRedisTemplate.get(MyConstants.USER_FORWARD_CACHE_PREFIX, username);
